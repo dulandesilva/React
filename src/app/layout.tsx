@@ -1,8 +1,9 @@
+"use client"
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
+import { Core } from '@ag.ds-next/react/core';
+import { theme } from '@ag.ds-next/react/ag-branding';
+import { LinkComponent } from './LinkComponent';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +16,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <Core theme={theme} linkComponent={LinkComponent}>
+   
+      <body >{children}</body>
+    
+    </Core>
   )
 }
